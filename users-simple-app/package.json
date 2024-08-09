@@ -1,0 +1,23 @@
+{
+  "name": "express-clean-code",
+  "version": "1.0.0",
+  "description": "A demo app for implementing coding best practices with express framework.",
+  "main": "src/server.ts",
+  "scripts": {
+    "start": "ts-node src/server.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ghaith Mlika",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.2",
+    "ts-node": "^10.9.2"
+  }
+}
