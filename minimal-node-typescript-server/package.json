@@ -1,0 +1,17 @@
+{
+  "name": "minimal-node-typescript-server",
+  "version": "1.0.0",
+  "description": "a minimal nodejs server using typescript",
+  "main": "src/server.ts",
+  "scripts": {
+    "start": "ts-node src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ghaith mlika",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
