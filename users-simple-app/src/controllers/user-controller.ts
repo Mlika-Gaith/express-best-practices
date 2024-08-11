@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { UserService } from "../services/user-service";
 import { HttpException } from "../utils/http-exception";
+import { Types } from "mongoose";
 
 const userService = new UserService();
 
@@ -41,8 +42,16 @@ export class UserController {
    */
   static async getUserById(req: Request, res: Response): Promise<void> {
     const { id } = req.params;
+    if (!Types.ObjectId.isValid(id)) {
+      res.status(400).json({ error: 'Invalid user ID format.' });
+      return;
+    }
     const user = await userService.getUserById(id);
-    if (!user) throw new HttpException(404, "User not found.");
+    if (!user) {
+      res.status(404).json({ error: 'User not found.' });
+      return;
+      //throw new HttpException(404, "User not found.");
+    }
     res.status(200).json(user);
   }
 }
