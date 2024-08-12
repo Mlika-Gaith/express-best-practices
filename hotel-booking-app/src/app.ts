@@ -1,6 +1,7 @@
 import express, { NextFunction, Request, Response } from "express";
 import dotenv from "dotenv";
 import connectDB from "./database";
+import userRoutes from "./routes/user-routes";
 
 // Load .env content into process.env
 
@@ -11,6 +12,9 @@ app.use(express.json());
 
 // Connect to Database
 connectDB();
+
+// routes
+app.use("/api", userRoutes);
 
 // Global error handling middleware
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
