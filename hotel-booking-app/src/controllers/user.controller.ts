@@ -1,6 +1,7 @@
 import { UserService } from "../services/user.service";
 import { Request, Response } from 'express';
 import {Account as IAccount} from '../types/account.type';
+import { CustomError } from "../utils/custom.error";
 
 const userService = new UserService();
 
@@ -20,8 +21,15 @@ export class UserController {
             res.status(400).json({error: "All fields are required."});
             return;
         }
-        const account = await userService.createUser(firstName, lastName, email, username, password);
+        try{
+            const account = await userService.createUser(firstName, lastName, email, username, password);
         res.status(201).json(account);
+        }catch(error: any){
+            if (error instanceof CustomError){
+                res.status(error.statusCode).json({ message: error.message, error: error.error })
+            }
+        }
+        
     }
     /**
      * Handles the authentication of a user.
