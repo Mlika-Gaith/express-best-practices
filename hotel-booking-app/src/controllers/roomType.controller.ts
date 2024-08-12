@@ -3,8 +3,16 @@ import RoomTypeService from "../services/roomType.service";
 import { CustomError } from "../utils/custom.error";
 
 const roomTypeService = new RoomTypeService();
-
+/**
+ * A controller class for handling room type related operations
+ */
 export default class RoomTypeController {
+    /**
+     * Create a new room type
+     * @param {Request} req - The request object
+     * @param {Response} res - The response object
+     * @returns {Promise<void>}
+     */
   static async createRoomType(req: Request, res: Response): Promise<void> {
     const { name, hotel, numberOfRooms, description } = req.body;
     if (!name || !hotel || !numberOfRooms || !description) {

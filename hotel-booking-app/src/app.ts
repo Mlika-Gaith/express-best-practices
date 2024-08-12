@@ -5,6 +5,7 @@ import userRoutes from "./routes/user.routes";
 import addressRoutes from "./routes/address.routes";
 import hotelRoutes from "./routes/hotel.routes";
 import roomTypeRoutes from "./routes/roomType.routes";
+import bookingRoutes from "./routes/booking.routes"
 
 // Load .env content into process.env
 
@@ -17,7 +18,7 @@ app.use(express.json());
 connectDB();
 
 // routes
-app.use("/api", userRoutes, addressRoutes, hotelRoutes, roomTypeRoutes);
+app.use("/api", userRoutes, addressRoutes, hotelRoutes, roomTypeRoutes, bookingRoutes);
 
 // Global error handling middleware
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
