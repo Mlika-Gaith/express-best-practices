@@ -2,6 +2,8 @@ import express, { NextFunction, Request, Response } from "express";
 import dotenv from "dotenv";
 import connectDB from "./database";
 import userRoutes from "./routes/user-routes";
+import addressRoutes from "./routes/address-routes";
+import hotelRoutes from "./routes/hotel.routes";
 
 // Load .env content into process.env
 
@@ -14,7 +16,7 @@ app.use(express.json());
 connectDB();
 
 // routes
-app.use("/api", userRoutes);
+app.use("/api", userRoutes, addressRoutes, hotelRoutes);
 
 // Global error handling middleware
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
