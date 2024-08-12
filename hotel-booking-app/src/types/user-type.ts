@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
 /**
- * represents a user entity.
+ * Represents a user entity.
  * @typeof {object} User
  * @property {string} firstName - The first name of the user.
  * @property {string} lastName - The last name of the user.

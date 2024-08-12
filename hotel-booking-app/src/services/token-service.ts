@@ -2,7 +2,6 @@ import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 dotenv.config({ path: ".env.local" });
 const secret = process.env.SECRET_KEY;
-console.log(secret)
 /**
  * Service class for JSON token related operations.
  */

@@ -1,7 +1,7 @@
 import {User as IUser} from './user-type';
 import { Document } from 'mongoose';
 /**
- * represents a user's account entity.
+ * Represents a user's account entity.
  * @typeof {object} Account
  * @property {string} user - The user's id.
  * @property {string} accessToken - The user's access token.
