@@ -35,4 +35,27 @@ export default class RoomTypeController {
       }
     }
   }
+  /**
+     * Gets the remaining number of rooms for a given room type
+     * @param {Request} req - The request object
+     * @param {Response} res - The response object
+     * @returns {Promise<void>}
+     */
+  static async getRemainingRooms(req: Request, res: Response): Promise<void> {
+    const { roomTypeId } = req.params;
+
+    if (!roomTypeId) {
+        res.status(400).json({ error: "Room type ID is required." });
+        return;
+    }
+
+    try {
+        const remainingRooms = await roomTypeService.getRemainingRooms(roomTypeId);
+        res.status(200).json({ remainingRooms });
+    } catch (error: any) {
+        if (error instanceof CustomError) {
+            res.status(error.statusCode).json({ error: error.error, message: error.message });
+        }
+    }
+}
 }

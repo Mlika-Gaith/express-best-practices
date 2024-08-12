@@ -40,4 +40,18 @@ export default class RoomTypeService {
     roomType.numberOfRooms -= 1;
     await roomType.save();
   }
+  /**
+     * Gets the remaining number of rooms for a given room type
+     * @param {string} roomTypeId - The id of the room type
+     * @returns {Promise<{message: string}>} The number of remaining rooms
+     * @throws {CustomError} If the room type or rooms are not found
+     */
+  async getRemainingRooms(roomTypeId: string): Promise<{message: string}>{
+    // Find the roomType
+    const roomType = await RoomType.findById(roomTypeId);
+    if (!roomType)
+        throw new CustomError(404, "Room type not found.")
+    return {message: `The remaining rooms are: ${roomType.numberOfRooms}`}
+    
+  }
 }
