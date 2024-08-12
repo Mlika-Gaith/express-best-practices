@@ -1,4 +1,4 @@
-import {User as IUser} from './user-type';
+import {User as IUser} from './user.type';
 import { Document } from 'mongoose';
 /**
  * Represents a user's account entity.

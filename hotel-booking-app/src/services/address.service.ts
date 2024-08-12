@@ -1,5 +1,5 @@
-import { Address } from "../models/address-model";
-import {Address as IAddress} from "../types/address-type";
+import { Address } from "../models/address.model";
+import {Address as IAddress} from "../types/address.type";
 import {Error as IError} from "../types/error.type";
 
 /**

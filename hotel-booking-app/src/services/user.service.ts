@@ -1,7 +1,7 @@
-import { Account } from '../models/account-model';
-import { User } from '../models/user-model';
-import {Account as IAccount} from '../types/account-type';
-import { TokenService } from './token-service';
+import { Account } from '../models/account.model';
+import { User } from '../models/user.model';
+import {Account as IAccount} from '../types/account.type';
+import { TokenService } from './tokens.ervice';
 const tokenService = new TokenService();
 /**
  * Service class for user related operations

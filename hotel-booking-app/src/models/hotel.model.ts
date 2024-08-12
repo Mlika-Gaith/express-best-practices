@@ -1,5 +1,5 @@
 import mongoose, {Schema} from "mongoose"
-import {Hotel as IHotel} from "../types/hotel-type";
+import {Hotel as IHotel} from "../types/hotel.type";
  const HotelSchema: Schema<IHotel> = new Schema({
         name: {
             type: String,

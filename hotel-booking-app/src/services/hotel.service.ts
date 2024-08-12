@@ -1,5 +1,5 @@
-import { Hotel } from "../models/hotel-model";
-import {Hotel as IHotel} from "../types/hotel-type";
+import { Hotel } from "../models/hotel.model";
+import {Hotel as IHotel} from "../types/hotel.type";
 import { Error as IError} from "../types/error.type";
 /**
  * Service class for hotel related operations

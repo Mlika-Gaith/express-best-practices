@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { HotelService } from '../services/hotel-service';
+import { HotelService } from '../services/hotel.service';
 const hotelService = new HotelService();
 /**
  * A controller class for handling hotel related operations

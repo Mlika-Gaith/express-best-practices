@@ -1,5 +1,5 @@
 import { Document } from "mongoose";
-import {Address as IAdress} from "./address-type";
+import {Address as IAdress} from "./address.type";
 /**
  * Represents a hotel entity.
  * @typeof {object} Hotel

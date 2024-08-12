@@ -1,5 +1,5 @@
 import mongoose, {Schema} from 'mongoose';
-import { Account as IAccount } from '../types/account-type';
+import { Account as IAccount } from '../types/account.type';
 
 const AccountSchema = new Schema({
     user: {type: Schema.Types.ObjectId, ref: 'User', required: true},

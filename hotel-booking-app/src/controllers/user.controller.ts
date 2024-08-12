@@ -1,6 +1,6 @@
-import { UserService } from "../services/user-service";
+import { UserService } from "../services/user.service";
 import { Request, Response } from 'express';
-import {Account as IAccount} from '../types/account-type';
+import {Account as IAccount} from '../types/account.type';
 
 const userService = new UserService();
 

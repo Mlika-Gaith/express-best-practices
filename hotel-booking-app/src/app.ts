@@ -1,8 +1,8 @@
 import express, { NextFunction, Request, Response } from "express";
 import dotenv from "dotenv";
 import connectDB from "./database";
-import userRoutes from "./routes/user-routes";
-import addressRoutes from "./routes/address-routes";
+import userRoutes from "./routes/user.routes";
+import addressRoutes from "./routes/address.routes";
 import hotelRoutes from "./routes/hotel.routes";
 
 // Load .env content into process.env
