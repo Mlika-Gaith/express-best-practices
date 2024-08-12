@@ -8,7 +8,7 @@ import {Address as IAdress} from "./address.type";
  * @property {string} email - The hotel's email.
  * @property {string} phoneNumber - The hotel's phone number.
  */
-export interface Hotel{
+export interface Hotel extends Document{
     name: string;
     description: string;
     email: string;

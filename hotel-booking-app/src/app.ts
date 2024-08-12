@@ -4,6 +4,7 @@ import connectDB from "./database";
 import userRoutes from "./routes/user.routes";
 import addressRoutes from "./routes/address.routes";
 import hotelRoutes from "./routes/hotel.routes";
+import roomRoutes from "./routes/room.routes";
 
 // Load .env content into process.env
 
@@ -16,7 +17,7 @@ app.use(express.json());
 connectDB();
 
 // routes
-app.use("/api", userRoutes, addressRoutes, hotelRoutes);
+app.use("/api", userRoutes, addressRoutes, hotelRoutes, roomRoutes);
 
 // Global error handling middleware
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
