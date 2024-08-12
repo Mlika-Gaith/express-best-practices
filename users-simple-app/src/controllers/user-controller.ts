@@ -13,12 +13,12 @@ export class UserController {
    * Handles the creation of a new user.
    * @param {Request} req - the request object.
    * @param {Response} res - the response object.
-   * @throws {HttpException} If name or email is missing from the request body.
    */
   static async createUser(req: Request, res: Response): Promise<void> {
     const { name, email } = req.body;
     if (!name || !email) {
-      throw new HttpException(400, "Name and email are required.");
+      res.status(400).json({error: "Name and email are required."});
+      return;
     }
     const newUser = await userService.createUser(name, email);
     res.status(201).json(newUser);
