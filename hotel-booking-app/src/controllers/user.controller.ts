@@ -1,6 +1,5 @@
 import { UserService } from "../services/user.service";
 import { Request, Response } from 'express';
-import {Account as IAccount} from '../types/account.type';
 import { CustomError } from "../utils/custom.error";
 
 const userService = new UserService();
